@@ -6,6 +6,36 @@
     <title>JavaScript函数练习</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      //1.声明一个函数，在需要的时候调用
+      function myFunction(a, b) {
+        //函数中的代码
+        return a * b;
+      }
+      //函数调用，返回6
+      var res = myFunction(2, 3);
+      console.log(res);
+      //2.sum函数就是使用arguments获取隐藏参数进行操作的
+      function sum() {
+        return arguments[0] + arguments[1];
+      }
+      var x = sum(3, 2);
+      document.write(x);
+      //3.多个参数，调用时应该和定义他们相同的顺序提供参数
+      function sayHello(name, age) {
+        console.log(name + "年龄是：" + age + "岁");
+      }
+      sayHello("John", 20);
+      //输出的是"20年龄是：John";如果缺少变量，则将缺少的值为undefined
+      sayHello(20, "John");
+      //4.变量作用域：局部作用域和全局变量
+      function myFunction() {
+        //carName变量是局部变量
+        var carName = "大众";
+      }
+      //此处的carsName是全局变量，函数里面和外面都可以调用
+      var carsName = "大众";
+      function myFunction() {}
+    </script>
   </body>
 </html>
