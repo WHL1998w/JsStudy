@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动画学习</title>
+    <style>
+      #container {
+        width: 600px;
+        height: 400px;
+        background: rgb(170, 199, 170);
+        position: relative;
+      }
+      #box {
+        width: 60px;
+        height: 60px;
+        background: rgb(211, 144, 144);
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <!--1.动画-->
+    <div id="container">
+      <div id="box"></div>
+    </div>
+    <script>
+      //动画
+      var pos = 0; // 盒子元素
+      var box = document.getElementById("box");
+      var t = setInterval(move, 10);
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t);
+        } else {
+          pos += 1;
+          box.style.left = pos + "px";
+        }
+      }
+    </script>
+    <!--2.选择元素-->
+    <div class="demo">
+      <span class="demo">Hi I'm Loen!</span>
+    </div>
+    <p class="demo">This is a paragraph</p>
+    <script>
+      var arr = document.getElementsByClassName("demo");
+      //访问第二个元素
+      arr[1].innerHTML = "Hi I am Peter";
+    </script>
+    <p>hi</p>
+    <p>hello</p>
+    <p>hi</p>
+    <script>
+      //getElementsByTagName 方法返回指定标签名称的所有元素,作为数组返回
+      var arr = document.getElementsByTagName("p");
+      for (var x = 0; x < arr.length; x++) {
+        arr[x].innerHTML = "Hi there";
+      }
+    </script>  
+      <!--3.我们可以选择元素的所有子节点并更改其内容--> 
+        <div id ="demo"> 
+          <p>一些文本</p> 
+          <p>另一些文本 </p> 
+        </div> 
+        <script> var a = document.getElementById("demo"); 
+        var arr = a.childNodes; 
+        for(var x=0;x<arr.length;x++) { 
+          arr[x].innerHTML = "新的文本";
+        }
+        </script>
+        <!--4.选择要使用的元素后，可以更改其属性-->  
+        <img id="my-img" src="1.jpg" alt="" /> 
+        <script> 
+        //改变sec属性
+        var el = document.getElementById("my-img"); // 通过id="my-img"获取元素 
+        el.src = "2.jpg"; 
+        </script>
+
+        <a href="http://www.baidu.com">百度</a> 
+        <script> 
+        //改变href中的链接
+        var el = document.getElementsByTagName("a"); 
+        el[0].href = "https://www.google.cn"; 
+        el[0].innerHTML = "google"; 
+        </script>   
+      </body> 
+    </script>
+  </body>
+</html>
