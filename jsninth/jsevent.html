@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript的事件学习</title>
+  </head>
+  <body>
+    <!--1.事件流-->
+    <p id="tip">这边显示提示</p>
+    <h2 id="tip">这边显示提示</h2>
+    <hr />
+    <p onclick="clickfn()">点击我看看</p>
+    <br />
+    <input type="text" onfocus="focusfn()" onblur="blurfn()" value="获得焦点" />
+    <br /><br />
+    <div onmouseover="moverfn()" onmouseout="moutfn()">
+      鼠标移动进来看看
+    </div>
+    <!--2.处理事件-->
+    <button onclick="show()">点击我</button>
+    <script>
+      function show() {
+        alert("你好,我在这里!");
+      }
+    </script>
+    <!--3.onchange 事件主要用于文本框-->
+    <input type="text" id="name" onchange="change()" />
+    <script>
+      function change() {
+        var x = document.getElementById("name");
+        x.value = x.value.toUpperCase(); // 转成大写
+      }
+    </script>
+    <!--4.事件监听-->
+    <script>
+      //addEventListener() 方法将事件处理程序附加到元素，而不会覆盖现有的事件处理程序
+      element.addEventListener("click", myFunction);
+      element.addEventListener("mouseover", myFunction);
+      function myFunction() {
+        alert("Hello JavaScript！");
+      }
+    </script>
+    <!--5.删除事件监听-->
+    <button id="demo">开始</button>
+    <script>
+      var btn = document.getElementById("demo");
+      btn.addEventListener("click", myFunction);
+      function myFunction() {
+        alert(Math.random());
+        btn.removeEventListener("click", myFunction);
+      }
+    </script>
+  </body>
+</html>
