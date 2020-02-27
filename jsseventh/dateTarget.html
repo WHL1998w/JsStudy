@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>时间对象学习</title>
+  </head>
+  <body>
+    <script>
+      //使用 new Date() , 将创建一个存储当前日期和时间的日期对象
+      //Fri Jan 02 1970 08:00:00 GMT+0800 (中国标准时间)
+      var d1 = new Date(86400000);
+      //Thu Oct 19 2017 15:56:00 GMT+0800 (中国标准时间)
+      var d2 = new Date("October 19, 2017 15:56:00");
+      //Sat Jun 11 1988 11:42:00 GMT+0800 (中国标准时间)
+      var d3 = new Date(88, 5, 11, 11, 42, 0, 0);
+      document.write(d2);
+    </script>
+  </body>
+</html>

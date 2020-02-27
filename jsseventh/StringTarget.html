@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String对象的练习</title>
+  </head>
+  <body>
+    <script>
+      var str = "Hello, Nier";
+      var a = str.toLowerCase(); // 把字符串转为小写
+      var b = str.toUpperCase(); // 把字符串转为大写
+      var c = " Hello world ".trim(); //去掉字符串两边的空白
+      var str = "Hello world, welcome to the w3cschool.";
+      varn = str.indexOf("welcome"); // 13
+      var c = str.indexOf("loen"); // -1
+      var str = "Mr Blue has a blue house and a blue car and a blue hat";
+      // 将字符串中首次出现的blue替换成red
+      var n = str.replace("blue", "red"); //Mr Blue has a red house and a blue car and a blue hat
+      // 用正则匹配字符串中所有出现的blue并替换成red
+      var c = str.replace(/blue/g, "red"); //Mr red has a red house and a red car and a red hat
+      var str = "Hello world!";
+      document.write(str.substring(3) + "<br />");
+      document.write(str.substring(3, 7));
+    </script>
+  </body>
+</html>
